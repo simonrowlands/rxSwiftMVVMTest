@@ -1,0 +1,6 @@
+framework module Pods_NCUTestProjectUITests {
+  umbrella header "Pods-NCUTestProjectUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
