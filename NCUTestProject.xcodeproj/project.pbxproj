@@ -24,6 +24,7 @@
 		F490AA23216F55FD005F55CF /* DetailTableViewModelFromInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490AA22216F55FD005F55CF /* DetailTableViewModelFromInformation.swift */; };
 		F490AA2A216FA009005F55CF /* DynamicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490AA29216FA009005F55CF /* DynamicTableViewController.swift */; };
 		F490AA2E216FA1A6005F55CF /* DynamicTableViewModelFromInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490AA2D216FA1A6005F55CF /* DynamicTableViewModelFromInformation.swift */; };
+		F4EFCE6D2170EFF100E6E321 /* SectionOfInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EFCE6C2170EFF100E6E321 /* SectionOfInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F490AA22216F55FD005F55CF /* DetailTableViewModelFromInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewModelFromInformation.swift; sourceTree = "<group>"; };
 		F490AA29216FA009005F55CF /* DynamicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableViewController.swift; sourceTree = "<group>"; };
 		F490AA2D216FA1A6005F55CF /* DynamicTableViewModelFromInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableViewModelFromInformation.swift; sourceTree = "<group>"; };
+		F4EFCE6C2170EFF100E6E321 /* SectionOfInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +157,7 @@
 				F43D1FA8216CDD62002256D5 /* ViewController.swift */,
 				F490AA27216F9FDA005F55CF /* StaticDetailTableViewController */,
 				F490AA28216F9FF3005F55CF /* DynamicTableViewController */,
-				F490AA1E216F5350005F55CF /* Information.swift */,
+				F4EFCE6B2170EFC800E6E321 /* Model */,
 				F43D1FAA216CDD62002256D5 /* Main.storyboard */,
 				F43D1FAD216CDD63002256D5 /* Assets.xcassets */,
 				F43D1FAF216CDD63002256D5 /* LaunchScreen.storyboard */,
@@ -198,8 +200,17 @@
 			children = (
 				F490AA29216FA009005F55CF /* DynamicTableViewController.swift */,
 				F490AA2D216FA1A6005F55CF /* DynamicTableViewModelFromInformation.swift */,
+				F4EFCE6C2170EFF100E6E321 /* SectionOfInformation.swift */,
 			);
 			path = DynamicTableViewController;
+			sourceTree = "<group>";
+		};
+		F4EFCE6B2170EFC800E6E321 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F490AA1E216F5350005F55CF /* Information.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +450,7 @@
 				F490AA23216F55FD005F55CF /* DetailTableViewModelFromInformation.swift in Sources */,
 				F490AA1D216F5322005F55CF /* DetailTableViewCell.swift in Sources */,
 				F490AA2E216FA1A6005F55CF /* DynamicTableViewModelFromInformation.swift in Sources */,
+				F4EFCE6D2170EFF100E6E321 /* SectionOfInformation.swift in Sources */,
 				F490AA1F216F5350005F55CF /* Information.swift in Sources */,
 				F43D1FA7216CDD62002256D5 /* AppDelegate.swift in Sources */,
 				F490AA2A216FA009005F55CF /* DynamicTableViewController.swift in Sources */,

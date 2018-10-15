@@ -8,6 +8,9 @@
 
 import Foundation
 
+import RxSwift
+import RxCocoa
+
 protocol InformationTableViewModel {
     var informationSet: [Information] { get }
     func generateNewInformationSet()

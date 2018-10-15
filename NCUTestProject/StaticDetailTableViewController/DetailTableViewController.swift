@@ -17,34 +17,25 @@ class DetailTableViewController: UITableViewController {
     
     var viewModel: InformationTableViewModel? {
         didSet {
-            setupUI()
+            setupTableView()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
-    }
-    
-    func setupUI() {
-        
-        guard isViewLoaded else {
-            return
-        }
-        
         tableView.rowHeight = UITableView.automaticDimension
         
-        updateTableViewData()
+        setupTableView()
     }
     
-    func updateTableViewData() {
+    func setupTableView() {
         
-        guard let viewModel = viewModel else {
+        guard isViewLoaded, let viewModel = viewModel else {
             return
         }
         
-        tableView.dataSource = nil
+        tableView.dataSource = nil // Required as dataSource is being replaced
         
         Observable.of(viewModel.informationSet).bind(to: tableView.rx.items(cellIdentifier: "detailViewCell", cellType: DetailTableViewCell.self)) { row, information, cell in
             
@@ -56,18 +47,13 @@ class DetailTableViewController: UITableViewController {
     
     @IBAction func generateButtonTapped() {
         
-        guard let viewModel = viewModel else {
-            return
-        }
-        
         /*
-         Feels hacky; a workaround static data binding.
-         Should use dynamic data binding (see other tableView) if that functionality is required.
+         Feels hacky; a workaround for static data binding. Better way?
          Doesn't seem to have any performance hit with 1000 rows but may do with more complicated data / images etc.
          */
         
-        viewModel.generateNewInformationSet()
+        viewModel?.generateNewInformationSet()
         
-        updateTableViewData()
+        setupTableView()
     }
 }

@@ -13,15 +13,21 @@ import RxDataSources
 
 class DynamicTableViewController: UITableViewController {
     
-    var disposeBag = DisposeBag() // Should this go here?
+    private let disposeBag = DisposeBag()
     
     var viewModel: InformationTableViewModel? {
         didSet {
-            setupUI()
+            setupTableView()
         }
     }
     
-    func setupUI() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupTableView()
+    }
+    
+    func setupTableView() {
         
         tableView.dataSource = nil
         
@@ -47,38 +53,8 @@ class DynamicTableViewController: UITableViewController {
             return true
         }
         
-        let sections = SectionOfInformation.generateSections()
-        
-        Observable.just(sections)
+        Observable.just(SectionOfInformation.generateSections())
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-    }
-}
-
-// Will extract all below from this file at some point
-
-struct SectionOfInformation {
-    var header: String
-    var items: [Information]
-    
-    static func generateSections(size: Int = 5) -> [SectionOfInformation] {
-        
-        var sections = [SectionOfInformation]()
-        
-        for i in 1...5 {
-            sections.append(SectionOfInformation(header: "Information \(i)", items: Information.createInformationSet(size: 5)))
-        }
-        
-        return sections
-    }
-}
-
-extension SectionOfInformation: SectionModelType {
-    
-    typealias Item = Information
-    
-    init(original: SectionOfInformation, items: [Item]) {
-        self = original
-        self.items = items
     }
 }
